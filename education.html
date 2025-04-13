@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Keshav Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --section-bg: #ffffff;
+            --card-bg: #fff;
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --heading-color: #2c3e50;
+            --subtext-color: #666;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+
+
+        .cv-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.cv-button:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+
+
+
+        body.dark-theme {
+            --background-color: #1a1a1a;
+            --text-color: #f9f9f9;
+            --header-bg: #333;
+            --section-bg: #262626;
+            --card-bg: #333;
+            --heading-color: #f9f9f9;
+            --subtext-color: #ccc;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            background-color: var(--header-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav button:hover {
+            color: var(--primary-color);
+        }
+        .section {
+            padding: 60px 0;
+            background: var(--section-bg);
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .section-text {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+        }
+        .section-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--heading-color);
+            position: relative;
+            padding-left: 30px;
+        }
+        .section-text h2:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            animation: rotate 2s infinite linear;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        .education-item h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .education-item p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 15px;
+        }
+        .education-item p:before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        footer {
+            background-color: var(--header-bg);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .section-text h2 {
+                font-size: 2rem;
+            }
+            .education-item h3 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Education</h1>
+            <p>My Academic Journey</p>
+        </div>
+    </header>
+
+    
+
+    <div class="cv-button-container">
+        <a href="Keshav_Goel_CV.pdf" target="_blank" download class="cv-button">
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </div>
+
+
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="birthplace.html">Birthplace</a></li>
+                <li><a href="skills.html">Achievements & Skills</a></li>
+                <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Academic Background</h2>
+                <div class="education-item">
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <p><strong>International Institute of Information Technology, Hyderabad</strong></p>
+                    <p><em>2024 - Present</em></p>
+                    <p>SGPA: 9.7/10 (Semester 1)</p>
+                    <p>Currently pursuing a 4-year program specializing in Data Structures, Algorithms, Software Systems, and Computer Architecture.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Class 12th (CBSE Board)</h3>
+                    <p><strong>Sidhartha Public School, Delhi</strong></p>
+                    <p><em>2022 - 2024</em></p>
+                    <p>Percentage: 96.2%</p>
+                    <p>Subjects: Physics, Chemistry, Mathematics, English, Physical Education</p>
+                    <p>Prepared for JEE at Allen Career Institute, Chandigarh.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Class 10th (CBSE Board)</h3>
+                    <p><strong>Mind Tree School, Ambala</strong></p>
+                    <p><em>2012 - 2022</em></p>
+                    <p>Percentage: 97%</p>
+                    <p>Subjects: English, Hindi, Mathematics, Science, Social Studies, Information Technology</p>
+                    <p>Completed a 10-year academic journey from Class 1 to Class 10, building a strong foundation in academics and leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Keshav Goel | All rights reserved <i class="fas fa-heart" style="color: var(--primary-color);"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") document.body.classList.add("dark-theme");
+        });
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            localStorage.setItem("theme", theme);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Goel - Birthplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS Variables for Themes */
+        :root {
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --section-bg: #ffffff;
+    --card-bg: #fff;
+    --primary-color: #e74c3c;
+    --secondary-color: #c0392b;
+    --heading-color: #2c3e50;
+    --subtext-color: #666;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.cv-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.cv-button:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+
+
+body.dark-theme {
+    --background-color: #1a1a1a;
+    --text-color: #f9f9f9;
+    --header-bg: #333;
+    --section-bg: #262626;
+    --card-bg: #333;
+    --heading-color: #f9f9f9;
+    --subtext-color: #ccc;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    background-color: var(--header-bg);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.header-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.header-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+nav {
+    background-color: var(--header-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+nav button:hover {
+    color: var(--primary-color);
+}
+.section {
+    padding: 60px 0;
+    background: var(--section-bg);
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.section-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+.section-text {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 10px;
+}
+.section-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    position: relative;
+    padding-left: 30px;
+}
+.section-text h2:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.section-text p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 15px;
+}
+.section-text p:before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.section-photo {
+    flex: 0 0 40%;
+    max-width: 500px;
+}
+.section-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+.section-photo img:hover {
+    transform: scale(1.05);
+}
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+.photo-gallery img {
+    width: 150px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.photo-gallery img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.about-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+.button:hover:before {
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+}
+.button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .section-text {
+        padding: 15px;
+    }
+    .section-photo {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .section-photo img {
+        max-height: 300px;
+    }
+    .photo-gallery {
+        justify-content: center;
+    }
+    .about-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+    header .header-content h1 {
+        font-size: 2.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Keshav Goel</h1>
+            <p>A Journey Through My Roots</p>
+        </div>
+    </header>
+    
+    <div class="cv-button-container">
+        <a href="Keshav_Goel_CV.pdf" target="_blank" download class="cv-button">
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </div>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Achievements & Skills</a></li>
+                <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Birthplace Description</h2>
+                    <p>
+                        Ambala, a city steeped in history and culture, has been my hometown since birth. Located in the heart of Haryana, India, Ambala is known for its strategic importance and rich heritage. The city's significance extends beyond its historical landmarks; it's a city that embodies the spirit of resilience and determination. From the ancient ruins to the modern infrastructure, Ambala's blend of old and new has shaped my worldview and inspired my creativity.
+                    </p>
+                </div>
+                <div class="section-photo">
+                    <img src="images/railway.jpg" alt="Ambala">
+                    <figcaption>Railway Station</figcaption>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="section-content" style="flex-direction: row-reverse;">
+                <div class="section-text">
+                    <h2>Cultural Significance</h2>
+                    <p>
+                        Growing up in Ambala has given me a unique perspective and appreciation for the region's history and traditions. The city's vibrant culture is reflected in its festivals, cuisine, and people. I've had the privilege of experiencing the warmth and hospitality of the Ambala people, who welcome visitors with open arms. The city's cultural events, such as the Ambala Mela and the Haryana Cultural Festival, have been an integral part of my childhood, teaching me the importance of community and cultural heritage.
+                    </p>
+                </div>
+                <div class="section-photo">
+                    <img src="images/welcome.jpg" alt="Welcome to Ambala!">
+                    <figcaption>Welcome to Ambala!</figcaption>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Personal Connection</h2>
+                    <p>
+                        As a proud native of Ambala, I'm deeply connected to the city's history, culture, and people. My experiences growing up in Ambala have taught me valuable lessons about community, hard work, and the importance of staying true to one's roots. The city's resilience and determination in the face of challenges have inspired me to pursue my passions and overcome obstacles. Ambala's influence on my life has been profound, shaping my values, interests, and goals.
+                    </p>
+                </div>
+                <div class="section-photo">
+                    <img src="images/cantt.jpg" alt="Ambala Cantonment">
+                    <figcaption>Ambala Cantonment</figcaption>
+                </div>
+            </div>
+            <div class="section-text" style="margin-top: 30px;">
+                <h2>Specific Landmarks</h2>
+                <p>
+                    Some of my favorite childhood memories are of visiting the Shiva Mandir, Panjokhra Sahib Gurudwara, and the Holy Redemeer Church , which showcase the city's rich cultural diversity. Netaji Subhash Chandra Bose Park, with its lush greenery and serene atmosphere, has been a heaven for relaxation and recreation. Ambala is famous for its airbase and is one of the most important in northern India. Other notable features are the fact that that Ambala Cantt is also known as the Science City and the Jaggi City Centre located in the heart of the city. These landmarks have not only provided a sense of community but also inspired my curiosity and creativity.
+                </p>
+                
+                <div class="photo-gallery">
+                    <img src="images/temple.jpg" alt="Temple">
+                    <img src="images/gurudwara.jpg" alt="Gurudwara">
+                    <img src="images/church.jpg" alt="Church">
+                    <img src="images/subhash.jpg" alt="Park">
+                    <img src="images/airbase.jpg" alt="Millitary area">
+                    <img src="images/science.jpg" alt="Science Market">
+                    <img src="images/jaggi.jpg" alt="Jaggi City Centre">
+                    
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>
+                    In conclusion, Ambala is more than just my birthplace; it's a city that has shaped my identity, values, and aspirations. I'm grateful for the experiences, lessons, and memories that I've accumulated growing up in this vibrant city. As I continue to grow and evolve, I remain connected to my roots and proud of my Ambala heritage.
+                </p>
+
+                <div class="about-buttons">
+                    <a href="index.html" class="button">Back to Home</a>
+                </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Keshav Goel | All rights reserved <i class="fas fa-heart" style="color: var(--primary-color);"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") document.body.classList.add("dark-theme");
+        });
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            localStorage.setItem("theme", theme);
+        }
+    </script>
+</body>
+</html>

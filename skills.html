@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Achievements - Keshav Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --section-bg: #ffffff;
+            --card-bg: #fff;
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --heading-color: #2c3e50;
+            --subtext-color: #666;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+
+
+        .cv-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.cv-button:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+
+
+
+        body.dark-theme {
+            --background-color: #1a1a1a;
+            --text-color: #f9f9f9;
+            --header-bg: #333;
+            --section-bg: #262626;
+            --card-bg: #333;
+            --heading-color: #f9f9f9;
+            --subtext-color: #ccc;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            background-color: var(--header-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav button:hover {
+            color: var(--primary-color);
+        }
+        .section {
+            padding: 60px 0;
+            background: var(--section-bg);
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .section-text {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+        }
+        .section-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--heading-color);
+            position: relative;
+            padding-left: 30px;
+        }
+        .section-text h2:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            animation: rotate 2s infinite linear;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .section-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section-text ul li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 15px;
+            transition: transform 0.3s ease;
+        }
+        .section-text ul li:hover {
+            transform: translateX(10px);
+        }
+        .section-text ul li:before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        footer {
+            background-color: var(--header-bg);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .section-text h2 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Skills & Achievements</h1>
+            <p>Showcasing My Expertise and Accomplishments</p>
+        </div>
+    </header>
+
+
+    <div class="cv-button-container">
+        <a href="Keshav_Goel_CV.pdf" target="_blank" download class="cv-button">
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </div>
+
+    
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="birthplace.html">Birthplace</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li><strong>Programming Languages:</strong> C, C++, Python</li>
+                    <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+                    <li><strong>Database Management:</strong> SQL, NoSQL</li>
+                    <li><strong>Tools & Frameworks:</strong> Git, GitHub, Bash, NumPy, Matplotlib, FastAPI, Jinja</li>
+                    <li><strong>Concepts:</strong> Data Structures & Algorithms, Object-Oriented Programming, Dynamic Programming, Competitive Programming</li>
+                    <li><strong>Hardware & Systems:</strong> Digital Systems, Microcontrollers, Processor Design, Computer Systems Organization</li>
+                    <li><strong>Mathematics:</strong> Linear Algebra, Real Analysis, Discrete Structures</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Competitive Examinations</h2>
+                <ul>
+                    <li>JEE Mains 2024: AIR 597, 99.97 Percentile (Session 1)</li>
+                    <li>JEE Advanced 2024: AIR 2634 (First Attempt)</li>
+                    <li>BITSAT 2024: Score 301</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Achievements</h2>
+                <ul>
+                    <li>Gold Medal in International English Olympiad (IEO), School Level</li>
+                    <li>Silver and Bronze Medals in National Science Olympiad (NSO), School Level</li>
+                    <li>Excellent Performance Certificate in ASSET Exam (Only recipient in batch)</li>
+                    <li>Multiple awards in school competitions: Declamation, Essay Writing, Science Exhibition, Story Writing</li>
+                    <li>Memento for Street Play Performance at Civil Hospital, Ambala Cantt</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Leadership & Extracurriculars</h2>
+                <ul>
+                    <li>Student Council Member, Mind Tree School (Junior & Senior Wings, 2 years)</li>
+                    <li>Logistics Team Member, Debsoc Club, IIIT-Hyderabad</li>
+                    <li>Performed in college events: Spotlight Solo Dance, Felicity Play, Freshers Night Group Dance, Skit, Flashmob</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English: Professional Proficiency</li>
+                    <li>Hindi: Native Proficiency</li>
+                    <li>Punjabi: Read, Write, Speak, Understand</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Keshav Goel | All rights reserved <i class="fas fa-heart" style="color: var(--primary-color);"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") document.body.classList.add("dark-theme");
+        });
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            localStorage.setItem("theme", theme);
+        }
+    </script>
+</body>
+</html>

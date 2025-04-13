@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Goel - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Themes */
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --nav-bg: #34495e;
+            --section-bg: #ecf0f1;
+            --card-bg: #fff;
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --heading-color: #2c3e50;
+            --subtext-color: #666;
+            --footer-bg: #2c3e50;
+            --footer-text: #fff;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .cv-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.cv-button:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+
+        body.dark-theme {
+            --background-color: #1a1a1a;
+            --text-color: #f9f9f9;
+            --header-bg: #333;
+            --nav-bg: #444;
+            --section-bg: #262626;
+            --card-bg: #333;
+            --heading-color: #f9f9f9;
+            --subtext-color: #ccc;
+            --footer-bg: #1a1a1a;
+        }
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background-color: var(--header-bg);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Navigation */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav button:hover {
+            color: var(--primary-color);
+        }
+ 
+.about {
+    padding: 60px 0; /* Keeping reduced padding, removing duplicate 80px rule */
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+    min-height: 600px; /* Adjust based on photo height */
+}
+
+.about-text-wrapper {
+    width: 100%;
+}
+
+.about-text-left {
+    text-align: left;
+    width: 100%;
+    padding-right: 530px; /* 500px (photo max-width) + 30px (gap) to reserve space */
+}
+
+.about-text-left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+}
+
+.about-text-left p {
+    font-size: 1.1rem;
+    margin-bottom: 15px; /* Tighter spacing */
+    line-height: 1.6;
+}
+
+.about-text-full {
+    text-align: left;
+    width: 100%;
+    margin-left: 0; /* Full width after photo */
+}
+
+.about-text-full p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-photo {
+    flex: 0 0 40%;
+    max-width: 500px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.about-photo img {
+    margin-top: 150px;
+    margin-left: 150px;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    /* Removed margin-top and margin-left to avoid offset */
+}
+
+.about-buttons {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        position: static;
+        min-height: auto;
+    }
+    .about-text-wrapper {
+        padding-right: 0;
+    }
+    .about-text-left {
+        padding-right: 0;
+        width: 100%;
+    }
+    .about-text-full {
+        width: 100%;
+    }
+    .about-photo {
+        position: static;
+        flex: 1;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .about-photo img {
+        max-height: 300px;
+    }
+    .about-buttons {
+        justify-content: center;
+    }
+}
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--heading-color);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+
+
+        .contact2 {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact2 p {
+            margin-top: 0px;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: #2980b9;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 30px 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-text {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            .about-photo {
+                flex: 1;
+                max-width: 100%;
+            }
+            .about-photo img {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Keshav Goel</h1>
+            <p>Web Developer | Designer | Problem Solver</p>
+        </div>
+    </header>
+
+    <div class="cv-button-container">
+        <a href="Keshav_Goel_CV.pdf" target="_blank" download class="cv-button">
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </div>
+
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text-wrapper">
+                    <div class="about-text-left">
+                        <h2>About Me</h2>
+                        <p>
+                            I’m a first-year BTech student with a burning passion for technology and a curiosity that drives me to explore the world of coding. My journey began in my first semester when I started learning C and C++, captivated by how lines of code could solve complex problems. From writing my first "Hello, World!" program to building small console applications, I’ve been hooked on the thrill of creating something functional and meaningful from scratch.
+                        </p>
+                        <p>
+                            While I’m still early in my tech adventure, I’m diving into web development with enthusiasm, experimenting with HTML, CSS, and the basics of JavaScript. This website is one of my first steps—a personal project to showcase my growing skills and learn by doing. I love the idea of crafting websites that are not only useful but also visually appealing, and I’m excited to keep exploring tools and techniques to bring my ideas to life.
+                        </p>
+                        <p>
+                            Outside of coding, I’m fascinated by a wide range of interests that keep me inspired. Whether it’s solving math puzzles, reading about the latest advancements in AI, or spending hours tweaking my code to make it just right, I’m always chasing new challenges. I also enjoy stepping away from the screen to immerse myself in music, sketch designs for fun projects, or simply daydream about the next big idea I want to tackle.
+                        </p>
+                    </div>
+                    <div class="about-text-full">
+                        <p>
+                            What motivates me is the belief that technology can make a difference, no matter how small. As a beginner, I’m eager to learn from every experience—be it a bug I debug or a new concept I grasp. My goal is to grow into a developer who builds solutions that connect people and spark joy, one project at a time. For now, I’m soaking up knowledge, asking questions, and enjoying the journey of discovery in this ever-evolving field.
+                        </p>
+                        <p>
+                            I’m thrilled to be at the start of this path, with so much to learn and explore. Whether it’s mastering a new programming concept or sharing what I’ve learned with others, I’m all in for creating, experimenting, and growing as a tech enthusiast. Here’s to turning my curiosity into creations that leave a mark!
+                        </p>
+                        <div class="about-buttons">
+                            <a href="education.html" target="_self" class="button">Education</a>
+                            <!-- <a href="achievements.html" target="_blank" class="button">Academic Achievements</a> -->
+                            <a href="birthplace.html" target="_self" class="button">Birthplace</a>
+                            <a href="skills.html" target="_blank" class="button">Achievements & Skills</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-photo">
+                    <img src="images/about.jpeg" alt="Keshav Goel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form class="contact-form" action="https://formspree.io/f/myzeoyky" method="POST">
+                <input type="hidden" name="_next" value="thankyou.html">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact2" class="contact2">
+        <div class="container">
+            
+            <p>Have a project in mind or want to connect? Feel free to reach out!</p>
+          
+            <div class="social-links">
+                <a href="https://github.com/KeshavGoel597" title="GitHub">GH</a>
+                <a href="https://www.linkedin.com/in/keshav-goel-6ab104318/" title="LinkedIn">LI</a>
+                <a href="https://codeforces.com/profile/Keshavgoel597" title="Codeforces">CF</a>
+                <a href="https://leetcode.com/u/keshavgoel597/" title="Leetcode">LC</a>
+                <a href="https://cses.fi/user/304019" title="CSES">CSES</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Keshav Goel All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") document.body.classList.add("dark-theme");
+        });
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            localStorage.setItem("theme", theme);
+        }
+    </script>
+</body>
+</html>
