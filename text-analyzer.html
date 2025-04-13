@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer - Keshav Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --section-bg: #ffffff;
+            --card-bg: #fff;
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --heading-color: #2c3e50;
+            --subtext-color: #666;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        body.dark-theme {
+            --background-color: #1a1a1a;
+            --text-color: #f9f9f9;
+            --header-bg: #333;
+            --section-bg: #262626;
+            --card-bg: #333;
+            --heading-color: #f9f9f9;
+            --subtext-color: #ccc;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cv-button-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+        .cv-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        .cv-button:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-2px);
+        }
+        nav {
+            background-color: var(--header-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav button:hover {
+            color: var(--primary-color);
+        }
+        .section {
+            padding: 60px 0;
+            background: var(--section-bg);
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        .section-text {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+        }
+        .section-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--heading-color);
+            position: relative;
+            padding-left: 30px;
+        }
+        .section-text h2:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            animation: rotate 2s infinite linear;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .section-text textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--subtext-color);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            resize: vertical;
+        }
+        .section-text button {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .section-text button:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-3px);
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .output h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+        .output p, .output ul {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        .output ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .output ul li {
+            padding-left: 15px;
+            position: relative;
+        }
+        .output ul li:before {
+            content: "➤";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--header-bg);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .section-text h2 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Text Analyzer</h1>
+            <p>Analyze Your Text with Ease</p>
+        </div>
+    </header>
+
+    <div class="cv-button-container">
+        <a href="Keshav_Goel_CV.pdf" target="_blank" download class="cv-button">
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </div>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="birthplace.html">Birthplace</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><button onclick="toggleTheme()">Toggle Theme</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-text">
+                <h2>Enter Your Text</h2>
+                <textarea id="textInput" rows="6" placeholder="Type or paste your text here..."></textarea>
+                <button onclick="analyzeText()">Analyze Text</button>
+                <div id="output" class="output"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Keshav Goel | All rights reserved <i class="fas fa-heart" style="color: var(--primary-color);"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        document.addEventListener("DOMContentLoaded", () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") document.body.classList.add("dark-theme");
+        });
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            localStorage.setItem("theme", theme);
+        }
+
+        // Text analysis
+        function analyzeText() {
+            const text = document.getElementById('textInput').value;
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+
+            // Task 1: Count letters, words, spaces, newlines, special symbols
+            const letters = text.match(/[a-zA-Z]/g)?.length || 0;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0).length || 0;
+            const spaces = text.match(/\s/g)?.length - (text.match(/\n/g)?.length || 0) || 0;
+            const newlines = text.match(/\n/g)?.length || 0;
+            const specialSymbols = text.match(/[^a-zA-Z0-9\s\n]/g)?.length || 0;
+
+            outputDiv.innerHTML += `
+                <h3>Basic Statistics</h3>
+                <p>Letters: ${letters}</p>
+                <p>Words: ${words}</p>
+                <p>Spaces: ${spaces}</p>
+                <p>Newlines: ${newlines}</p>
+                <p>Special Symbols: ${specialSymbols}</p>
+            `;
+
+            // Task 2: Count pronouns
+            const pronounsList = ['i', 'me', 'my', 'mine', 'you', 'your', 'yours', 'he', 'him', 'his', 'she', 'her', 'hers', 'it', 'its', 'we', 'us', 'our', 'ours', 'they', 'them', 'their', 'theirs'];
+            const tokens = text.toLowerCase().split(/\s+/).filter(token => token.length > 0);
+            const pronounCounts = {};
+            pronounsList.forEach(pronoun => pronounCounts[pronoun] = 0);
+            tokens.forEach(token => {
+                if (pronounsList.includes(token)) {
+                    pronounCounts[token]++;
+                }
+            });
+            const pronounEntries = Object.entries(pronounCounts).filter(([_, count]) => count > 0);
+            const totalPronouns = pronounEntries.reduce((sum, [_, count]) => sum + count, 0);
+
+            outputDiv.innerHTML += `
+                <h3>Pronouns (Total: ${totalPronouns})</h3>
+                <ul>
+                    ${pronounEntries.length > 0 ? pronounEntries.map(([pronoun, count]) => `<li>${pronoun}: ${count}</li>`).join('') : '<li>No pronouns found</li>'}
+                </ul>
+            `;
+
+            // Task 3: Count prepositions
+            const prepositionsList = ['about', 'above', 'across', 'after', 'against', 'along', 'among', 'around', 'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'beyond', 'by', 'down', 'during', 'except', 'for', 'from', 'in', 'into', 'near', 'of', 'off', 'on', 'onto', 'over', 'past', 'through', 'to', 'toward', 'under', 'until', 'up', 'upon', 'with', 'within', 'without'];
+            const prepositionCounts = {};
+            prepositionsList.forEach(prep => prepositionCounts[prep] = 0);
+            tokens.forEach(token => {
+                if (prepositionsList.includes(token)) {
+                    prepositionCounts[token]++;
+                }
+            });
+            const prepEntries = Object.entries(prepositionCounts).filter(([_, count]) => count > 0);
+            const totalprep = prepEntries.reduce((sum, [_, count]) => sum + count, 0);
+            outputDiv.innerHTML += `
+                <h3>Prepositions (Total: ${totalprep})</h3>
+                <ul>
+                    ${prepEntries.length > 0 ? prepEntries.map(([prep, count]) => `<li>${prep}: ${count}</li>`).join('') : '<li>No prepositions found</li>'}
+                </ul>
+            `;
+
+            // Task 4: Count indefinite articles
+            const articlesList = ['a', 'an'];
+            const articleCounts = {};
+            articlesList.forEach(article => articleCounts[article] = 0);
+            tokens.forEach(token => {
+                if (articlesList.includes(token)) {
+                    articleCounts[token]++;
+                }
+            });
+            const articleEntries = Object.entries(articleCounts).filter(([_, count]) => count > 0);
+            const totalarticle = articleEntries.reduce((sum, [_, count]) => sum + count, 0);
+            outputDiv.innerHTML += `
+                <h3>Indefinite Articles (Total: ${totalarticle})</h3>
+                <ul>
+                    ${articleEntries.length > 0 ? articleEntries.map(([article, count]) => `<li>${article}: ${count}</li>`).join('') : '<li>No indefinite articles found</li>'}
+                </ul>
+            `;
+        }
+    </script>
+    <script src="q2.js"></script>
+</body>
+</html>
