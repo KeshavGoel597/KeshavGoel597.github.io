@@ -282,7 +282,21 @@
     }
     .section-text textarea {
         font-size: 0.8rem;
-    }
+    } @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .section-text h2 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
     .section-text button {
         font-size: 0.8rem;
         padding: 8px 15px;
